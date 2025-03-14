@@ -68,6 +68,7 @@ public class BrowserFactory {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 //        options.addArguments("enable-geolocation");
+        System.out.println("Chrome Launched in " + BaseLib.OS);
         try {
             driver = new ChromeDriver(options);
         } catch (Exception e) {
