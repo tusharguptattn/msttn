@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="methods" data-provider-thread-count="1" thread-count="1" configfailurepolicy="continue">
+    <listeners>
+        <listener
+                class-name="com.ttn.WebAutomation.listeners.MyProjectListener"/>
+    </listeners>
+    <parameter name="Environment" value="QA"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="testingType" value="sanity"/>
+    <parameter name="EmailSend" value="No"/>
+    <parameter name="isLambda" value="false"/>
+
+    <test name="Test Chrome" preserve-order="true">
+        <parameter name="packageName" value="Running on chrome"/>
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ttn.WebAutomation.tests.msil.vahanReportView.DownloadVahanReportTest">
+                <methods>
+                    <include name="DownloadRTOReportByState"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

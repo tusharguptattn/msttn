@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TTN_Quality_Report_Regression" thread-count="1">
+
+    <listeners>
+        <listener
+                class-name="com.ttn.WebAutomation.listeners.MyProjectListener"/>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+
+
+    </listeners>
+
+
+    <parameter name="Environment" value="uat"/>
+    <parameter name="browser" value="chrome"/>
+
+    <test name="Test Chrome" preserve-order="true">
+
+        <parameter name="packageName" value="Running on Chrome"/>
+        <parameter name="Port" value="4545"/>
+
+        <classes>
+            <class name="com.ttn.WebAutomation.tests.msil.TestDrive"/>
+
+        </classes>
+    </test>
+
+
+</suite>
+
+
+
+
